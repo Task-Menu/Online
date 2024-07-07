@@ -1,0 +1,57 @@
+﻿<Window x:Class="AcademySystem.Views.ConsultationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Style="{StaticResource MaterialDesignWindow}"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:AcademySystem.Views"
+        mc:Ignorable="d"
+        Title="Consultation"
+        Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.ColumnSpan="6" HorizontalAlignment="Center" Content="Enter Candidate Details" FontSize="24" FontWeight="SemiBold" />
+
+        <TextBox Grid.Row="1" Grid.Column="0"
+                 Height="40" Margin="20,0"
+                 Padding="10" materialDesign:HintAssist.Hint="First Name"
+                 Style="{StaticResource MaterialDesignOutlinedTextBox}" Text="{Binding FirstName}" />
+        <TextBox Grid.Row="1" Grid.Column="3"
+                 Grid.ColumnSpan="3" Height="40"
+                 Margin="20,0" Padding="10"
+                 materialDesign:HintAssist.Hint="Last Name"
+                 Style="{StaticResource MaterialDesignOutlinedTextBox}" Text="{Binding LastName}" />
+
+        <TextBox Grid.Row="2" Grid.Column="0"
+                 Height="40" Margin="20,0"
+                 Padding="10" Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                 Text="{Binding PhoneNumber}" materialDesign:HintAssist.Hint="Enter phone number"/>
+        <DatePicker Grid.Row="2" Grid.Column="1"
+                    Height="40" Margin="20,0"
+                    Padding="10" Style="{StaticResource MaterialDesignOutlinedDatePicker}"
+                    Text="{Binding Birthdate}" materialDesign:HintAssist.Hint="Choose birthday"/>
+
+        <Button Grid.Row="4" Grid.Column="0"
+                Width="200" Height="35"
+                Margin="20,0" Content="Cancel"
+                Style="{StaticResource MaterialDesignPaperDarkButton}" 
+                Click="Cancel_Click"/>
+        <Button Grid.Row="4" Grid.Column="1"
+                Width="200" Height="35"
+                Margin="20,0" Background="#2ec96f"
+                BorderBrush="#2ec96f" Command="{Binding SaveCommand}"
+                Content="Save" Click="Save_Click"/>
+    </Grid>
+</Window>
