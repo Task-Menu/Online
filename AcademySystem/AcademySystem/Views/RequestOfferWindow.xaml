@@ -27,17 +27,20 @@
                HorizontalAlignment="Center" Content="Ask and offer" 
                FontSize="24" FontWeight="SemiBold" />
 
-        <TextBox Grid.Row="1" Grid.Column="0" 
+        <TextBox x:Name="FirstNameInput"
+                 Grid.Row="1" Grid.Column="0" 
                  Height="40" Margin="20,0" 
                  Padding="10" materialDesign:HintAssist.Hint="Enter first name" 
                  Style="{StaticResource MaterialDesignOutlinedTextBox}" Text="{Binding FirstName}" />
-        <TextBox Grid.Row="1" Grid.Column="3" 
+        <TextBox x:Name="LastNameInput"
+                 Grid.Row="1" Grid.Column="3" 
                  Grid.ColumnSpan="3" Height="40"
                  Margin="20,0" Padding="10" 
                  materialDesign:HintAssist.Hint="Enter last lame" 
                  Style="{StaticResource MaterialDesignOutlinedTextBox}" Text="{Binding LastName}" />
 
-        <TextBox Grid.Row="2" Grid.Column="0"
+        <TextBox x:Name="MessageInput"
+                 Grid.Row="2" Grid.Column="0"
                  Grid.ColumnSpan="3" Grid.RowSpan="2"
                  Height="100" Margin="20,10,20,0"
                  Padding="10" Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -46,11 +49,12 @@
         <Button Grid.Row="4" Grid.Column="0"
                 Width="200" Height="35" 
                 Margin="20,0" Content="Cancel" 
-                Style="{StaticResource MaterialDesignPaperDarkButton}" />
+                Style="{StaticResource MaterialDesignPaperDarkButton}"
+                Click="Cancel_Click" />
         <Button Grid.Row="4" Grid.Column="1" 
                 Width="200" Height="35" 
                 Margin="20,0" Background="#2ec96f" 
                 BorderBrush="#2ec96f" Command="{Binding SendCommand}" 
-                Content="Send" />
+                Content="Send" Click="Send_Click" />
     </Grid>
 </Window>

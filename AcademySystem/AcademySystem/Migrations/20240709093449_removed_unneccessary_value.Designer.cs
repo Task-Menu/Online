@@ -4,6 +4,7 @@ using AcademySystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AcademySystem.Migrations
 {
     [DbContext(typeof(AcademySystemDbContext))]
-    partial class AcademySystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240709093449_removed_unneccessary_value")]
+    partial class removed_unneccessary_value
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,14 +102,8 @@ namespace AcademySystem.Migrations
 
             modelBuilder.Entity("AcademySystem.Models.RequestOffer", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
                     b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
@@ -114,7 +111,7 @@ namespace AcademySystem.Migrations
                     b.Property<string>("MessageText")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("FirstName");
 
                     b.ToTable("RequestOffer");
                 });

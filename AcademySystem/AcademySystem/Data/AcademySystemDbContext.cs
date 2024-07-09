@@ -11,6 +11,7 @@ namespace AcademySystem.Data
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<CourseTeacher> CourseTeachers { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
+        public virtual DbSet<RequestOffer> RequestOffer { get; set; }
 
 
         public AcademySystemDbContext()
