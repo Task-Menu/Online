@@ -1,7 +1,6 @@
 ﻿using AcademySystem.Data;
 using AcademySystem.Models;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace AcademySystem.Views
 {

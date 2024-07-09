@@ -23,16 +23,23 @@
                     <TabItem Width="100">
                         <TabItem.Header>
                             <StackPanel Width="auto" Height="auto" Margin="0,20,0,0">
-                                <materialDesign:PackIcon Width="24" Height="24" HorizontalAlignment="Center" Kind="Laptop" />
-                                <TextBlock HorizontalAlignment="Center" Text="Onlayn kurslar" Height="30" Width="100" />
+                                <materialDesign:PackIcon Width="24" Height="24"
+                                                         HorizontalAlignment="Center" Kind="Laptop"
+                                                         MouseDoubleClick="Online_MouseDoubleClick"/>
+                                <TextBlock HorizontalAlignment="Center"
+                                           Text="Onlayn kurslar"
+                                           Height="30" Width="100" />
                             </StackPanel>
                         </TabItem.Header>
                     </TabItem>
                     <TabItem Width="110">
                         <TabItem.Header>
                             <StackPanel Width="auto" Height="auto" Margin="0,25,0,0">
-                                <materialDesign:PackIcon Width="24" Height="24" HorizontalAlignment="Center" Kind="Desk" />
-                                <TextBlock HorizontalAlignment="Center" Text="Oflayn kurslar" />
+                                <materialDesign:PackIcon Width="24" Height="24"
+                                                         HorizontalAlignment="Center" Kind="Desk"
+                                                         MouseDoubleClick="Offline_MouseDoubleClick"/>
+                                <TextBlock HorizontalAlignment="Center"
+                                           Text="Oflayn kurslar" />
                             </StackPanel>
                         </TabItem.Header>
                     </TabItem>

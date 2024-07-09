@@ -24,21 +24,25 @@
 
         <Label Grid.Row="0" Grid.ColumnSpan="6" HorizontalAlignment="Center" Content="Enter Candidate Details" FontSize="24" FontWeight="SemiBold" />
 
-        <TextBox Grid.Row="1" Grid.Column="0"
+        <TextBox x:Name="FirstNameInput"
+                 Grid.Row="1" Grid.Column="0"
                  Height="40" Margin="20,0"
                  Padding="10" materialDesign:HintAssist.Hint="First Name"
                  Style="{StaticResource MaterialDesignOutlinedTextBox}" Text="{Binding FirstName}" />
-        <TextBox Grid.Row="1" Grid.Column="3"
+        <TextBox x:Name="LastNameInput"
+                 Grid.Row="1" Grid.Column="3"
                  Grid.ColumnSpan="3" Height="40"
                  Margin="20,0" Padding="10"
                  materialDesign:HintAssist.Hint="Last Name"
                  Style="{StaticResource MaterialDesignOutlinedTextBox}" Text="{Binding LastName}" />
 
-        <TextBox Grid.Row="2" Grid.Column="0"
+        <TextBox x:Name="PhoneNumberInput"
+                 Grid.Row="2" Grid.Column="0"
                  Height="40" Margin="20,0"
                  Padding="10" Style="{StaticResource MaterialDesignOutlinedTextBox}"
                  Text="{Binding PhoneNumber}" materialDesign:HintAssist.Hint="Enter phone number"/>
-        <DatePicker Grid.Row="2" Grid.Column="1"
+        <DatePicker x:Name="BirthdayInput"
+                    Grid.Row="2" Grid.Column="1"
                     Height="40" Margin="20,0"
                     Padding="10" Style="{StaticResource MaterialDesignOutlinedDatePicker}"
                     Text="{Binding Birthdate}" materialDesign:HintAssist.Hint="Choose birthday"/>

@@ -1,6 +1,7 @@
 ﻿using AcademySystem.Models;
 using AcademySystem.Views;
 using System.Windows;
+using System.Windows.Input;
 
 namespace AcademySystem
 {
@@ -39,6 +40,20 @@ namespace AcademySystem
         private void Partner_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Online_MouseDoubleClick(object sender, RoutedEventArgs e)
+        {
+            var onlineWindow = new OnlineCourses();
+            onlineWindow.Owner = this;
+            onlineWindow.Show();
+        }
+
+        private void Offline_MouseDoubleClick(object sender, RoutedEventArgs e)
+        {
+            var offlineWindow = new OfflineCourses();
+            offlineWindow.Owner = this;
+            offlineWindow.Show();
         }
     }
 }

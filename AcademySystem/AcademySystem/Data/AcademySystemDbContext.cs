@@ -12,6 +12,7 @@ namespace AcademySystem.Data
         public virtual DbSet<CourseTeacher> CourseTeachers { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<RequestOffer> RequestOffer { get; set; }
+        public virtual DbSet<Consultations> Consultations { get; set; }
 
 
         public AcademySystemDbContext()
@@ -21,7 +22,7 @@ namespace AcademySystem.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=PAVILION;Initial Catalog=Academy;Integrated Security=True;Trust Server Certificate=True");
+            optionsBuilder.UseSqlServer("Data Source=PAVILION;Initial Catalog=Academy;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
             base.OnConfiguring(optionsBuilder);
         }
     }
