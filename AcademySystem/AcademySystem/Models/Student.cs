@@ -1,29 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System;
+using AcademySystem.Common;
+using System.Collections.Generic;
 
-namespace AcademySystem.Models
+namespace AcademySystem.Models;
+
+public class Student : AuditableEntity
 {
-    internal class Student
-    {
-        [Key]
-        public int Id { get; set; }
-        public string GroupId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int TelNumber { get; set; }
-        public DateTime CreatedAt { get; set; }
-
-        public Student()
-        {
-        }
-        public Student(int id, string groupId, string firstName, string lastName, int telNumber, DateTime createdAt)
-        {
-            Id = id;
-            GroupId = groupId;
-            FirstName = firstName;
-            LastName = lastName;
-            TelNumber = telNumber;
-            CreatedAt = createdAt;            
-        }
-    }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string PhoneNumber { get; set; }
+    public string Email { get; set; }
+    public virtual IEnumerable<Enrollment> Enrollments { get; set; }
 }

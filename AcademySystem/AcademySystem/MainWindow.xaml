@@ -16,67 +16,7 @@
             <ColumnDefinition Width="4*" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <materialDesign:Card HorizontalAlignment="Left" Height="433">
-                <TabControl materialDesign:ColorZoneAssist.Mode="Standard"
-                            materialDesign:ElevationAssist.Elevation="Dp0"
-                            Style="{StaticResource MaterialDesignNavigationRailTabControl}">
-                    <TabItem Width="100">
-                        <TabItem.Header>
-                            <StackPanel Width="auto" Height="auto" Margin="0,20,0,0">
-                                <materialDesign:PackIcon Width="24" Height="24"
-                                                         HorizontalAlignment="Center" Kind="Laptop"
-                                                         MouseDoubleClick="Online_MouseDoubleClick"/>
-                                <TextBlock HorizontalAlignment="Center"
-                                           Text="Onlayn kurslar"
-                                           Height="30" Width="100" />
-                            </StackPanel>
-                        </TabItem.Header>
-                    </TabItem>
-                    <TabItem Width="110">
-                        <TabItem.Header>
-                            <StackPanel Width="auto" Height="auto" Margin="0,25,0,0">
-                                <materialDesign:PackIcon Width="24" Height="24"
-                                                         HorizontalAlignment="Center" Kind="Desk"
-                                                         MouseDoubleClick="Offline_MouseDoubleClick"/>
-                                <TextBlock HorizontalAlignment="Center"
-                                           Text="Oflayn kurslar" />
-                            </StackPanel>
-                        </TabItem.Header>
-                    </TabItem>
-                </TabControl>
-            </materialDesign:Card>
-        </StackPanel>
-        <StackPanel Grid.Column="1">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,25,0,0">
-                <Button Content="About academy" Margin="0,0,5,0" Click="Academy_Info_Click" />
-                <Button Content="Get consultation" Margin="0,0,5,0" Click="Consultation_Click" />
-                <Button Content="Requests and offers" Margin="0,0,5,0" Click="Request_Click" />
-                <Button Content="Our partners" Margin="0,0,5,0" Click="Partner_Click" />
-            </StackPanel>
-            <StackPanel Margin="15,25,45,0" Width="450" HorizontalAlignment="Left">
-                <materialDesign:ColorZone Padding="16" Mode="Light" Background="White">
-                    <DockPanel>
-                        <StackPanel materialDesign:RippleAssist.IsCentered="True" Orientation="Horizontal">
-                            <materialDesign:ColorZone Margin="16,0,0,0" Padding="8,4,8,4" Panel.ZIndex="1" materialDesign:ElevationAssist.Elevation="Dp2" CornerRadius="2" Mode="Standard">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Button Style="{StaticResource MaterialDesignToolButton}">
-                                        <materialDesign:PackIcon Kind="Search" Opacity=".56" />
-                                    </Button>
-                                    <TextBox Grid.Column="1" MinWidth="200" Margin="8,0,0,0" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Search..." materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0" />
-                                    <Button Grid.Column="2" Style="{StaticResource MaterialDesignToolButton}">
-                                        <materialDesign:PackIcon Margin="8,0,0,0" Kind="Microphone" Opacity=".56" />
-                                    </Button>
-                                </Grid>
-                            </materialDesign:ColorZone>
-                        </StackPanel>
-                    </DockPanel>
-                </materialDesign:ColorZone>
-            </StackPanel>
+            <Button Content="Students" Click="Student_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>

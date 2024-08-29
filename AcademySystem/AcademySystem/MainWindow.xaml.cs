@@ -1,7 +1,5 @@
-﻿using AcademySystem.Models;
-using AcademySystem.Views;
+﻿using AcademySystem.Extensions;
 using System.Windows;
-using System.Windows.Input;
 
 namespace AcademySystem
 {
@@ -13,47 +11,13 @@ namespace AcademySystem
         public MainWindow()
         {
             InitializeComponent();
+
+            DatabaseInitializer.SeedDatabase();
         }
 
-        private void Academy_Info_Click(object sender, RoutedEventArgs e)
+        private void Student_Click(object sender, RoutedEventArgs e)
         {
-            var infoWindow = new InformationWindow();
-            infoWindow.Owner = this;
-            infoWindow.Show();
-            
-        }
-        
-        private void Consultation_Click(object sender, RoutedEventArgs e)
-        {
-            var consultationWindow = new ConsultationWindow();
-            consultationWindow.Owner = this;
-            consultationWindow.Show();
-        }
-        
-        private void Request_Click(object sender, RoutedEventArgs e)
-        {
-            var requestWindow = new RequestOfferWindow();
-            requestWindow.Owner = this;
-            requestWindow.Show();
-        }
-        
-        private void Partner_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Online_MouseDoubleClick(object sender, RoutedEventArgs e)
-        {
-            var onlineWindow = new OnlineCourses();
-            onlineWindow.Owner = this;
-            onlineWindow.Show();
-        }
-
-        private void Offline_MouseDoubleClick(object sender, RoutedEventArgs e)
-        {
-            var offlineWindow = new OfflineCourses();
-            offlineWindow.Owner = this;
-            offlineWindow.Show();
+            var studentView = new StudentWindow();
         }
     }
 }

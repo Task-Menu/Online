@@ -1,28 +1,29 @@
-﻿using AcademySystem.Models;
+﻿using AcademySystem.Common.Constants;
+using AcademySystem.Extensions;
+using AcademySystem.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace AcademySystem.Data
 {
-    internal class AcademySystemDbContext : DbContext
+    public class AcademySystemDbContext : DbContext
     {
         public virtual DbSet<Student> Students { get; set; }
-        public virtual DbSet<Teacher> Teachers { get; set; }
+        public virtual DbSet<Mentor> Mentors { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
-        public virtual DbSet<CourseTeacher> CourseTeachers { get; set; }
-        public virtual DbSet<Group> Groups { get; set; }
-        public virtual DbSet<RequestOffer> RequestOffer { get; set; }
-        public virtual DbSet<Consultations> Consultations { get; set; }
+        public virtual DbSet<MentorCourse> MentorCourses { get; set; }
+        public virtual DbSet<Gruop> Groups { get; set; }
+        public virtual DbSet<Enrollment> Enrollments { get; set; }
 
 
         public AcademySystemDbContext()
         {
-            Database.SetCommandTimeout(TimeSpan.FromMinutes(5));
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=PAVILION;Initial Catalog=Academy;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
+            optionsBuilder.AddInterceptors(new AuditInterceptor());
+            optionsBuilder.UseSqlServer(ConnectionString.CONNECTION_STRING);
             base.OnConfiguring(optionsBuilder);
         }
     }
